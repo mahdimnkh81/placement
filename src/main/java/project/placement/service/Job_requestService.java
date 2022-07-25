@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import project.placement.Dao.Job_requestDao;
 import project.placement.entity.Job_requestEntity;
-import project.placement.model.Job_request;
+import project.placement.model.JobRequest;
 
 @Service
 public class Job_requestService {
@@ -15,7 +15,7 @@ public class Job_requestService {
     @Autowired
     private ModelMapper modelMapper;
 
-    public String insert_Job_request(Job_request job_request){
+    public String insert_Job_request(JobRequest job_request){
 //        Job_requestEntity job_requestEntity=new Job_requestEntity();
 //        job_requestEntity.setCompanyname(job_request.getCompanyname());
 //        job_requestEntity.setJobcategory(job_request.getJobcategory());
