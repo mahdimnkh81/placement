@@ -1,22 +1,12 @@
-package project.placement.entity;
+package project.placement.model;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+public class JobRequest {
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "Job_requests")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property = "id")
-public class Job_requestEntity {
-    @Id
     private Integer id;
     private String companyname;
     private String jobcategory;
     private String descriptions;
     private String conditions;
-    @ManyToOne
-    private UserEntity userEntity;
 
     public Integer getId() {
         return id;
@@ -56,13 +46,5 @@ public class Job_requestEntity {
 
     public void setConditions(String conditions) {
         this.conditions = conditions;
-    }
-
-    public UserEntity getUserEntity() {
-        return userEntity;
-    }
-
-    public void setUserEntity(UserEntity userEntity) {
-        this.userEntity = userEntity;
     }
 }
