@@ -8,6 +8,9 @@ import project.placement.Dao.Job_requestDao;
 import project.placement.entity.Job_requestEntity;
 import project.placement.model.JobRequest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class Job_requestService {
     @Autowired
@@ -25,7 +28,19 @@ public class Job_requestService {
         return "true";
     }
     public ResponseEntity search_job(String companyName){
-        return ResponseEntity.ok(job_requestDao.findByCompanyname(companyName));
+        List<Job_requestEntity>  a = job_requestDao.findByCompanyname(companyName);
+        if (a.size()==0){
+            System.out.println("NOT FOUND");
+        }else {
+
+            for (int i = 0; i < a.size(); i++) {
+                String x = a.get(i).getId() + "-> " + a.get(i).getCompanyname() + "-> " + a.get(i).getJobcategory() + "-> " + a.get(i).getDescriptions() + "-> " + a.get(i).getConditions();
+                System.out.println(x);
+            }
+        }
+
+
+        return ResponseEntity.ok("Finish");
     }
 
 }

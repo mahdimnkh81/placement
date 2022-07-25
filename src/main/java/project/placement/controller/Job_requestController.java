@@ -21,11 +21,10 @@ public class Job_requestController {
         job_requestService.insert_Job_request(job_request);
         return "yes";
     }
-//    @ResponseBody
-//    @RequestMapping(value = "/JobSearch/{companyname}",method = RequestMethod.GET)
-//    public String search_job(@PathVariable String companyname ){
-//        System.out.println(companyname);
-//        job_requestService.search_job(companyname);
-//        return "yes";
-//    }
+    @ResponseBody
+    @RequestMapping(value = "/JobSearch/{companyname}",method = RequestMethod.GET)
+    public String search_job(@PathVariable String companyname ){
+        job_requestService.search_job(companyname);
+        return "yes";
+    }
 }
