@@ -17,7 +17,6 @@ public class SendCvService {
         message.setSubject(emailCV.getSubject());
         String s = "Grade -> "+emailCV.getGrade()+"\n"+"Major -> "+emailCV.getMajor()+"\n"+"University_Name -> "+emailCV.getUniversity_Name()+"\n"+"Job_title -> "+emailCV.getJob_title()+"\n"+"Company_name -> "+emailCV.getCompany_name()+"\n"+"Date_of_employment -> "+emailCV.getDate_of_employment()+"\n"+"Description -> "+emailCV.getDescription();
         message.setText(s);
-        System.out.println(s);
         javaMailSender.send(message);
         return "yes";
     }
